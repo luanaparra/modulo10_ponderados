@@ -1,0 +1,4 @@
+venv
+flask/__pycache__
+fast/__pycache__
+flask/src/__pycache__
