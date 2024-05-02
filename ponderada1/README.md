@@ -24,7 +24,7 @@ docker compose up
 Por fim, para testar o teste de escalabilidade, responsável por comparar o desempenho dos dois servidores em condições de carga simultânea, é necessário rodar:
 
 ```
-python3 performance_test.py
+python3 test.py
 ``` 
 
 ## Demonstração 
