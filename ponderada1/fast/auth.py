@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 SECRET_KEY = "YOUR_SECRET_KEY"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token") 
 def create_access_token(user_id):
