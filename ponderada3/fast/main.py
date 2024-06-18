@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, status, Request, Response
+from fastapi import FastAPI, Depends, HTTPException, status, Request, Response, BackgroundTasks
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.responses import JSONResponse, StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,6 +11,8 @@ import auth
 from pydantic import BaseModel
 import pyppeteer
 import io
+from notifications import send_notification
+import logging
 
 app = FastAPI()
 
@@ -33,17 +35,17 @@ async def login_for_access_token(request: Request, db: AsyncSession = Depends(da
             detail="Incorrect username or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    access_token = auth.create_access_token(data={"sub": user.username})
+    access_token = auth.create_access_token(user.id)
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.post("/api/register", response_model=UserCreate)
+@app.post("/api/register")
 async def register_user(request: Request, db: AsyncSession = Depends(database.get_db)):
     user_data = await request.json()
     user = models.User(username=user_data["username"], password=user_data["password"])
     async with db as session:
         session.add(user)
         await session.commit()
-    return {"message": "User created successfully", "username": user_data["username"], "password": user_data["password"]}
+    return {"message": "User created successfully"}
 
 @app.post("/api/login")
 async def login(request: Request, db: AsyncSession = Depends(database.get_db)):
@@ -98,7 +100,6 @@ async def create_task(request: Request, task: TaskCreate, db: AsyncSession = Dep
 
 @app.delete("/api/tasks/{task_id}")
 async def delete_task(task_id: int, request: Request, db: AsyncSession = Depends(database.get_db)):
-
     token = request.cookies.get("jwt_token")
     if not token:
         raise HTTPException(status_code=401, detail="Authentication credentials were not provided.")
@@ -162,6 +163,19 @@ async def capture_screenshot(request: Request):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/api/upload_image")
+async def upload_image(request: Request, background_tasks: BackgroundTasks):
+    form = await request.form()
+    file = form['file']
+    contents = await file.read()
+
+    with open(f'static/{file.filename}', 'wb') as f:
+        f.write(contents)
+
+    background_tasks.add_task(send_notification, "Processing completed")
+
+    return {"filename": file.filename, "message": "Image uploaded and processed"}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
@@ -169,3 +183,4 @@ if __name__ == "__main__":
 @app.on_event("startup")
 async def startup_event():
     await models.create_tables()
+    logging.basicConfig(filename='user_actions.log', level=logging.INFO)

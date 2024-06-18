@@ -1,13 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-void main() {
-  runApp(MaterialApp(
-    home: SignUpPage(),
-  ));
-}
 
 class SignUp extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
@@ -19,10 +12,10 @@ class SignUp extends StatelessWidget {
     final email = _emailController.text;
     final password = _passwordController.text;
 
-    final url = Uri.parse('http://localhost:5000/users');
+    final url = Uri.parse('http://localhost:8000/api/register');
     final response = await http.post(
       url,
-      body: jsonEncode({'name': name, 'email': email, 'password': password}),
+      body: jsonEncode({'username': name, 'password': password}),
       headers: {'Content-Type': 'application/json'},
     );
 

@@ -1,13 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-void main() {
-  runApp(MaterialApp(
-    home: Login(),
-  ));
-}
 
 class Login extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -17,15 +10,15 @@ class Login extends StatelessWidget {
     final email = _emailController.text;
     final password = _passwordController.text;
 
-    final url = Uri.parse('http://localhost:5000/login');
+    final url = Uri.parse('http://localhost:8000/api/login');
     final response = await http.post(
       url,
-      body: jsonEncode({'email': email, 'password': password}),
+      body: jsonEncode({'username': email, 'password': password}),
       headers: {'Content-Type': 'application/json'},
     );
 
     if (response.statusCode == 200) {
-      Navigator.of(context).pushNamed('/todo');
+      Navigator.of(context).pushNamed('/upload');
     } else {
       print('Erro ao fazer login');
     }

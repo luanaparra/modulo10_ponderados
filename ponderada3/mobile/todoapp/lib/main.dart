@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
+import 'login.dart';
+import 'sign.dart';
+import 'screenshot.dart';
+import 'upload_image.dart';
 
 void main() {
-  runApp(TodoApp());
+  runApp(MyApp());
 }
 
-class TaskApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Todo App',
+      title: 'My App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Login(),
+        '/signup': (context) => SignUp(),
+        '/screenshot': (context) => Screenshot(),
+        '/upload': (context) => UploadImage(),
+      },
     );
   }
 }
