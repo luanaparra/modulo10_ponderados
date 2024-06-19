@@ -1,0 +1,9 @@
+{"time": "2024-06-18 05:19:24,304", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:24,725", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:24,918", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:25,093", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:25,242", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:25,418", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:19:25,586", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 2, 'method': 'GET'}"}
+{"time": "2024-06-18 05:32:45,740", "name": "main", "level": "INFO", "message": "Acessando a rota /"}
+{"time": "2024-06-18 05:37:32,967", "name": "routers.usuarios", "level": "INFO", "message": "{'message': 'Acessando a rota /usuarios/{usuario_id}', 'usuario_id': 1, 'method': 'GET'}"}

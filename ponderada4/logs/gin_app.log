@@ -1,0 +1,46 @@
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2024/06/18 - 05:32:50 | 404 |         490ns |      172.19.0.4 | GET      "/"
+[GIN] 2024/06/18 - 05:32:55 | 200 |      49.581µs |      172.19.0.4 | GET      "/example"
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /example                  --> main.main.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] GET    /users                    --> main.getUsers (4 handlers)
+[GIN-debug] GET    /users/:id                --> main.getUserByID (4 handlers)
+[GIN-debug] POST   /users                    --> main.createUser (4 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (4 handlers)
+[GIN-debug] DELETE /users/:id                --> main.deleteUser (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2024/06/18 - 05:45:47 | 404 |          90ns |      172.19.0.2 | GET      "/example"
+[GIN] 2024/06/18 - 05:46:02 | 200 |      95.963µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:04 | 200 |       28.19µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:05 | 200 |      73.061µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:05 | 200 |       21.12µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:05 | 200 |      45.271µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:05 | 200 |       25.05µs |      172.19.0.2 | GET      "/users"
+[GIN] 2024/06/18 - 05:46:05 | 200 |       27.69µs |      172.19.0.2 | GET      "/users"
